@@ -18,14 +18,20 @@ class DOMNodeCollection {
 
     }
     remove(arg) {
+
+    }
+    append(){
         if (arg instanceof HTMLElement) {
-            
+            this.elementsArray.forEach((ele) => {
+                ele.innerHTML += arg.outerHTML;
+            });
         } else if (arg instanceof String) {
-
+            this.elementsArray.forEach((ele) =>{
+                ele.innerHTML += arg;
+            });
         } else if (arg instanceof DOMNodeCollection) {
-
+            
         }
-
     }
     attr() {
 
